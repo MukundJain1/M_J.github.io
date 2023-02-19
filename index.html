@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>M_J</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/30697f7edb.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    
+        <nav>
+            <img class="logo" src="images/MJ LOGO.png" alt="logo">
+            <ul id="sidemenu">
+                <li><a href="#header"> Home</a></li>
+                <li><a href="#about"> About</a></li>
+                <li><a href="#services"> Service</a></li>
+                <li><a href="#portfolio"> Portfolio</a></li>
+                <li><a href="#contact"> Contact</a></li>
+
+                <i class="fa-solid fa-square-xmark" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+    </div>
+    </nav>
+    </div>
+    <section class="background firstSection">
+        <div class="box-main">
+            <div class="firstHalf">
+                <p class="text-big">
+                    "Hi, Myself <span>Mukund Jain"</p>
+            </div>
+            <div class="secondHalf">
+                <img src="images/background_image.png" alt="an empty road">
+            </div>
+        </div>
+
+        <!-- about me  -->
+        <div id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="about-col-1">
+                        <img src="images/WhatsApp Image 2023-02-14 at 23.48.17.jpeg" alt="my image">
+                    </div>
+                    <div class="about-col-2">
+                        <h1 class="sub-title">About Me</h1>
+                        <p>This is about myself</p>
+
+                        <div class="tab-titles">
+                            <p class="tab-links active-link" onclick="opentab('Skills')">Skills</p>
+                            <p class="tab-links" onclick="opentab('Experience')">Experience</p>
+                            <p class="tab-links" onclick="opentab('Education')">Education</p>
+                        </div>
+                        <div class="tab-contents active-tab" id="Skills">
+                            <ul>
+                                <li><span>UI/UX</span><br>
+                                    <p>"Currently, I am in the process of learning UI/UX design, and I am at the
+                                        beginning stage of my journey. Although I don't have much experience in this
+                                        field yet, I am planning to build a project in the coming days to update my
+                                        portfolio, which will include the project."</p>
+                                </li><br>
+                                <li><span>Web Development</span><br>
+                                    <p>"At the moment, I am in the middle of learning web development. I am currently
+                                        familiar with HTML and CSS, and I am currently focusing on learning JavaScript.
+                                        As I continue to develop my skills, I am excited to explore the many
+                                        possibilities and opportunities that the world of web development has to offer."
+                                    </p>
+                                </li> <br>
+                                <li><span>C-Language</span><br>
+                                    <p>"I am familiar with many programming languages such as Python, Java, and C++, but
+                                        I am most proficient in C. Currently, I am mostly practicing programming in C to
+                                        further develop my skills in this language."</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="Experience">
+                            <ul>
+                                <li><span>UI/UX</span><br>
+                                    <p>"As I am currently in the beginning stages of learning UI/UX design, I am
+                                        starting from scratch and working to build a solid foundation in the field. My
+                                        current focus is on gaining experience and developing my skills. Once I feel
+                                        confident in my abilities, I plan to implement what I've learned in a real-world
+                                        project, whether it be a personal project or participation in a hackathon. In
+                                        the near future, I look forward to sharing my progress and showcasing my work in
+                                        my portfolio."</p>
+                                </li><br>
+                                <li><span>Web Development</span><br>
+                                    <p>"This was the first skill I learned because it seemed easy to learn and I had a
+                                        strong interest in it. Since then, I have been continuously learning and honing
+                                        my skills. I have already built homepages for 3-4 websites, although they are
+                                        not very functional and serve as a basic implementation of web development
+                                        concepts. I plan to share the links to these websites soon. However, I am
+                                        currently working on a more complex web development project and look forward to
+                                        sharing it with you in the near future."</p>
+                                </li><br>
+                                <li><span>C-Language</span><br>
+                                    <p>"As I previously mentioned, I am more proficient in the C language than in other
+                                        programming languages such as Python, Java, and C++. I have even created a Rock
+                                        Paper Scissors game in both C and Java, and sometimes I play this game with a
+                                        computer. Currently, I am exploring ways to apply my programming skills and
+                                        improve my coding ability in C."</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="Education">
+                            <ul>
+                                <li>
+                                    <p>"I finished my high school in 2021 at <span> KCM School Moradabad</span> in the
+                                        CBSE Board. I enrolled in <span>VIT</span> for my bachelor's degree, but
+                                        initially received an offer to study <span>Civil Engineering</span>. Despite
+                                        considering taking a gap year, my elder brother advised me that <span>I could
+                                            switch after the first year</span>. With dedication and hard work, <span>I
+                                            successfully transferred from civil to IT</span> after completing my first
+                                        year, and I am now in my second year."</p><br>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- services -->
+
+        <div id="services">
+            <div class="container">
+                <h1 class="sub-title">My Services</h1>
+                <div class="services-list">
+                    <div>
+                        <i class="fa-solid fa-code"></i>
+                        <h2>Web Developer</h2>
+                        <p>This is the description of my skills in web development</p>
+                        <a href="#Skills">Learn more</a>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-crop-simple"></i>
+                        <h2>UI/UX Designs</h2>
+                        <p>This is the description of my skills in UI/UX design</p>
+                        <a href="#Skills">Learn more</a>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-apple-whole"></i>
+                        <h2>C programmer</h2>
+                        <p>This is the description of my skills in C programming</p>
+                        <a href="#Skills">Learn more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- portfolio -->
+        <div id="portfolio">
+            <div class="container">
+                <h class="sub-title">My Work</h>
+                <div class="work-list">
+                    <div class="work">
+                        <img src="images/work-1.png" alt="">
+                        <div class="layer">
+                            <h3><b>Muzic</b></h3>
+                            <p>"This website enables school and college students to share their expertise in a
+                                particular field, benefiting and engaging others in expanding knowledge."
+                            </p>
+                            <a href="#"><i class="fa-solid fa-link"></i></a>
+                        </div>
+                    </div>
+                    <div class="work">
+                        <img src="images/work-2.png" alt="">
+                        <div class="layer">
+                            <h3><b>E-Commerce price comparison</b></h3>
+                            <p>"This website facilitates individuals in obtaining the best price for their products by
+                                comparing prices across various websites."
+                            </p>
+                            <a href="#"><i class="fa-solid fa-link"></i></a>
+                        </div>
+                    </div>
+                    <div class="work">
+                        <img src="images/work-3.png" alt="">
+                        <div class="layer">
+                            <h3><b>Hidden Friends</b></h3>
+                            <p>"This website was created so that any students who are struggling with anything,
+                                including academic, psychological, or personal challenges, can openly communicate with
+                                us."
+                            </p>
+                            <a href="https://final-cc8e4.web.app/" target="_blank"><i class="fa-solid fa-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <a href="#about" class="btn">See more</a>
+            </div>
+        </div>
+        <!-- contact   -->
+
+        <div id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="contact-left">
+                        <h1 class="sub-title">Contact Me</h1>
+                        <p><i class="fa-solid fa-paper-plane"></i>mukundjain2803@gmail.com</p>
+                        <p><i class="fa-solid fa-phone-volume"></i>9027754481</p>
+                        <div class="social-icons">
+                            <a href="https://www.facebook.com/profile.php?id=100079523314331&mibextid=ZbWKwL"
+                                target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="https://instagram.com/mukundjain2091?igshid=ZDdkNTZiNTM=" target="_blank"><i
+                                    class="fa-brands fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/help/linkedin/?trk=p_settings_helpcenter_globalnav_android"
+                                target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                        </div>
+                        <a href="images/my-cv.pdf" download class="btn btn2">Download Cv</a>
+                    </div>
+                    <div class="contact-right">
+                        <form>
+                            <input type="text" name="Name" placeholder="Your Name" required>
+                            <input type="email" name="email" placeholder="Your Email" required>
+                            <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                            <button type="submit" class="btn btn2">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="animation" id="animation">
+            <div class="disp">
+                <div class="cube">
+                    <div class="top"></div>
+                    <div>
+                        <span style="--i:0;"></span>
+                        <span style="--i:1;"></span>
+                        <span style="--i:2;"></span>
+                        <span style="--i:3;"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="disp1">
+                <div class="cube1">
+                    <div class="top1"></div>
+                    <div>
+                        <span style="--i:0;"></span>
+                        <span style="--i:1;"></span>
+                        <span style="--i:2;"></span>
+                        <span style="--i:3;"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="disp2">
+                <div class="cube2">
+                    <div class="top2"></div>
+                    <div>
+                        <span style="--i:0;"></span>
+                        <span style="--i:1;"></span>
+                        <span style="--i:2;"></span>
+                        <span style="--i:3;"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="disp3">
+                <div class="cube3">
+                    <div class="top3"></div>
+                    <div>
+                        <span style="--i:0;"></span>
+                        <span style="--i:1;"></span>
+                        <span style="--i:2;"></span>
+                        <span style="--i:3;"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="disp4">
+                <div class="cube4">
+                    <div class="top4"></div>
+                    <div>
+                        <span style="--i:0;"></span>
+                        <span style="--i:1;"></span>
+                        <span style="--i:2;"></span>
+                        <span style="--i:3;"></span>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <footer>
+            <p class="text-footer">
+                Copyright &copy; 2025 Mukund Jain "<i class="fa-sharp fa-solid fa-code"></i>" - All rights reserved
+            </p>
+        </footer>
+        <script>
+            var tablinks = document.getElementsByClassName("tab-links");
+            var tabcontents = document.getElementsByClassName("tab-contents");
+            function opentab(tabname) {
+                for (tablink of tablinks) {
+                    tablink.classList.remove("active-link")
+                }
+                for (tabcontent of tabcontents) {
+                    tabcontent.classList.remove("active-tab")
+                }
+                event.currentTarget.classList.add("active-link");
+                document.getElementById(tabname).classList.add("active-tab");
+            }
+        </script>
+
+        <script>
+            var sidemenu = document.getElementById("sidemenu");
+
+            function openmenu() {
+                sidemenu.style.right = "0";
+            }
+            function closemenu() {
+                sidemenu.style.right = "-200px";
+            }
+        </script>
+    </section>
+</body>
+
+</html>
