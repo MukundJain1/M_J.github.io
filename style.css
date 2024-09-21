@@ -93,9 +93,10 @@ nav ul li a:hover::after{
 }
 
 .secondHalf img {
-    width: 70%;
-    border: 2px solid rgb(240, 28, 148);
-    border-radius: 150px;
+    width: 80%;
+    height: auto;
+    border: 2px solid rgb(170, 15, 82);
+    border-radius: 50px;
     display: block;
     margin: auto;
 }
@@ -164,9 +165,13 @@ nav ul li a:hover::after{
 .tab-contents ul li span{
     color: #b54769;
     font-size: 14px;
+    text-align: justify;
 }
+
+/* for content under sub headings */
 .tab-contents{
     display: none;
+    text-align: justify;
 }
 .tab-contents.active-tab{
     display: block;
