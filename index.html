@@ -238,20 +238,20 @@
                             <textarea name="message" rows="6" placeholder="Your Message"></textarea>
                             <button type="submit" class="btn btn2">Submit</button>
                         </form> -->
-                        <form method="POST" id="form">
-
+                        <form method="POST" id="form" onsubmit="return formValidation(event)">
                             <input type="hidden" name="access_key" value="e818e8b7-5a67-4322-a703-e9fa651ea51f">
-                        
-                            <input type="text" name="name" placeholder="Your Name" required>
-                            <input type="email" name="email" placeholder="Your Email" required>
-                            <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
+
+                            <input type="text" id="your_name" name="name" placeholder="Your Name" required>
+                            <input type="email" id="your_email" name="email" placeholder="Your Email" required>
+                            <textarea name="message" id="enter_message" placeholder="Your Message" rows="6"
+                                required></textarea>
+
                             <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-                        
+
                             <button type="submit" class="btn btn2">Submit Form</button>
-                        
-                            <div id="result"></div>
-                        
+                            <div id="error" style="color: red;"></div>
                         </form>
+
                     </div>
                 </div>
             </div>
@@ -262,6 +262,83 @@
             </p>
         </footer>
         <script>
+
+            function formValidation(event) {
+                event.preventDefault(); // Prevent form from submitting until validation passes
+
+                let name = document.getElementById("your_name").value;
+                let email = document.getElementById("your_email").value;
+                let message = document.getElementById("enter_message").value;
+                let errorMessage = document.getElementById("error");
+
+                errorMessage.textContent = ''; // Clear error message
+
+                // Name validation
+                if (name === '') {
+                    errorMessage.textContent = "Name is required";
+                    return false;
+                }
+
+                // Email validation using regex
+                let emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+                if (email === '') {
+                    errorMessage.textContent = 'Email is required';
+                    return false;
+                } else if (!emailPattern.test(email)) {
+                    errorMessage.textContent = 'Please enter a valid email address';
+                    return false;
+                }
+
+                // Message validation
+                if (message === '') {
+                    errorMessage.textContent = 'Message is required';
+                    return false;
+                }
+
+                // If everything is valid, proceed with form submission
+                submitForm();
+                return true;
+            }
+
+            function submitForm() {
+                form.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    const formData = new FormData(form);
+                    const object = Object.fromEntries(formData);
+                    const json = JSON.stringify(object);
+                    error.innerHTML = "Please wait..."
+
+                    fetch('https://api.web3forms.com/submit', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json'
+                        },
+                        body: json
+                    })
+                        .then(async (response) => {
+                            let json = await response.json();
+                            if (response.status == 200) {
+                                error.innerHTML = "Form submitted successfully";
+                            } else {
+                                console.log(response);
+                                error.innerHTML = json.message;
+                            }
+                        })
+                        .catch(error => {
+                            console.log(error);
+                            error.innerHTML = "Something went wrong!";
+                        })
+                        .then(function () {
+                            form.reset();
+                            setTimeout(() => {
+                                error.style.display = "none";
+                            }, 3000);
+                        });
+                });
+            }
+
             var tablinks = document.getElementsByClassName("tab-links");
             var tabcontents = document.getElementsByClassName("tab-contents");
             function opentab(tabname) {
@@ -274,47 +351,8 @@
                 event.currentTarget.classList.add("active-link");
                 document.getElementById(tabname).classList.add("active-tab");
             }
-        </script>
 
-        <script>
-            const form = document.getElementById('form');
-            const result = document.getElementById('result');
 
-            form.addEventListener('submit', function (e) {
-                e.preventDefault();
-                const formData = new FormData(form);
-                const object = Object.fromEntries(formData);
-                const json = JSON.stringify(object);
-                result.innerHTML = "Please wait..."
-
-                fetch('https://api.web3forms.com/submit', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
-                    },
-                    body: json
-                })
-                    .then(async (response) => {
-                        let json = await response.json();
-                        if (response.status == 200) {
-                            result.innerHTML = "Form submitted successfully";
-                        } else {
-                            console.log(response);
-                            result.innerHTML = json.message;
-                        }
-                    })
-                    .catch(error => {
-                        console.log(error);
-                        result.innerHTML = "Something went wrong!";
-                    })
-                    .then(function () {
-                        form.reset();
-                        setTimeout(() => {
-                            result.style.display = "none";
-                        }, 3000);
-                    });
-            });
             var sidemenu = document.getElementById("sidemenu");
 
             function openmenu() {
