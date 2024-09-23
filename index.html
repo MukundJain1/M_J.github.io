@@ -10,7 +10,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <script src="https://kit.fontawesome.com/30697f7edb.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 </head>
 
 <body>
@@ -203,7 +207,8 @@
                                 including academic, psychological, or personal challenges, can openly communicate with
                                 us."
                             </p>
-                            <a href="https://mukundjain1.github.io/hiddenFriends/" target="_blank"><i class="fa-solid fa-link"></i></a>
+                            <a href="https://mukundjain1.github.io/hiddenFriends/" target="_blank"><i
+                                    class="fa-solid fa-link"></i></a>
                         </div>
                     </div>
                 </div>
@@ -232,12 +237,6 @@
                         <a href="images/Mukund Jain_ Resume (2).pdf" download class="btn btn2">Download Cv</a>
                     </div>
                     <div class="contact-right">
-                        <!-- <form action="e818e8b7-5a67-4322-a703-e9fa651ea51f" method="POST">
-                            <input type="text" name="Name" placeholder="Your Name" required>
-                            <input type="email" name="email" placeholder="Your Email" required>
-                            <textarea name="message" rows="6" placeholder="Your Message"></textarea>
-                            <button type="submit" class="btn btn2">Submit</button>
-                        </form> -->
                         <form method="POST" id="form" onsubmit="return formValidation(event)">
                             <input type="hidden" name="access_key" value="e818e8b7-5a67-4322-a703-e9fa651ea51f">
 
@@ -261,108 +260,13 @@
                 Copyright &copy; 2025 Mukund Jain "<i class="fa-sharp fa-solid fa-code"></i>" - All rights reserved
             </p>
         </footer>
-        <script>
-
-            function formValidation(event) {
-                event.preventDefault(); // Prevent form from submitting until validation passes
-
-                let name = document.getElementById("your_name").value;
-                let email = document.getElementById("your_email").value;
-                let message = document.getElementById("enter_message").value;
-                let errorMessage = document.getElementById("error");
-
-                errorMessage.textContent = ''; // Clear error message
-
-                // Name validation
-                if (name === '') {
-                    errorMessage.textContent = "Name is required";
-                    return false;
-                }
-
-                // Email validation using regex
-                let emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-
-                if (email === '') {
-                    errorMessage.textContent = 'Email is required';
-                    return false;
-                } else if (!emailPattern.test(email)) {
-                    errorMessage.textContent = 'Please enter a valid email address';
-                    return false;
-                }
-
-                // Message validation
-                if (message === '') {
-                    errorMessage.textContent = 'Message is required';
-                    return false;
-                }
-
-                // If everything is valid, proceed with form submission
-                submitForm();
-                return true;
-            }
-
-            function submitForm() {
-                form.addEventListener('submit', function (e) {
-                    e.preventDefault();
-                    const formData = new FormData(form);
-                    const object = Object.fromEntries(formData);
-                    const json = JSON.stringify(object);
-                    error.innerHTML = "Please wait..."
-
-                    fetch('https://api.web3forms.com/submit', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'Accept': 'application/json'
-                        },
-                        body: json
-                    })
-                        .then(async (response) => {
-                            let json = await response.json();
-                            if (response.status == 200) {
-                                error.innerHTML = "Form submitted successfully";
-                            } else {
-                                console.log(response);
-                                error.innerHTML = json.message;
-                            }
-                        })
-                        .catch(error => {
-                            console.log(error);
-                            error.innerHTML = "Something went wrong!";
-                        })
-                        .then(function () {
-                            form.reset();
-                            setTimeout(() => {
-                                error.style.display = "none";
-                            }, 3000);
-                        });
-                });
-            }
-
-            var tablinks = document.getElementsByClassName("tab-links");
-            var tabcontents = document.getElementsByClassName("tab-contents");
-            function opentab(tabname) {
-                for (tablink of tablinks) {
-                    tablink.classList.remove("active-link")
-                }
-                for (tabcontent of tabcontents) {
-                    tabcontent.classList.remove("active-tab")
-                }
-                event.currentTarget.classList.add("active-link");
-                document.getElementById(tabname).classList.add("active-tab");
-            }
-
-
-            var sidemenu = document.getElementById("sidemenu");
-
-            function openmenu() {
-                sidemenu.style.right = "0";
-            }
-            function closemenu() {
-                sidemenu.style.right = "-200px";
-            }
-        </script>
     </section>
+    <script>
+        AOS.init({
+            offset: 300,
+            duration: 1000,
+        });
+    </script>
 </body>
 
 </html>
